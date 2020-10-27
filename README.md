@@ -48,7 +48,39 @@ Y en la gráfica de la autocorrelación también, donde la posición del primer 
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
 
+_Se analiza un fragmento de la señal para detectar la periodicidad mediante el enventanado, ya que necesitamos como mínimo dos periodos de pitch_.
+    
+_Hemos utilizado la ventana Hamming, que es impletada en el método **`set_window`**_
+
+```cpp
+void PitchAnalyzer::set_window(Window win_type) {
+    if (frameLen == 0)
+      return;
+
+    window.resize(frameLen);
+
+    switch (win_type) {
+    case HAMMING:
+      for(int i=0;i<frameLen; i++){
+        window[i]=0.54-0.46*cos((2*M_1_PI*i)/(frameLen-1));
+      }
+      break;
+    case RECT:
+    default:
+      window.assign(frameLen, 1);
+    }
+  }
+ ```
+
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
+
+_Haremos uso del método **`unvoiced`** que nos permite detectar cuando tenemos voz y cuando es silencio_.
+
+
+```cpp
+
+```
+
 
 - Una vez completados los puntos anteriores, dispondrá de una primera versión del detector de pitch. El 
   resto del trabajo consiste, básicamente, en obtener las mejores prestaciones posibles con él.

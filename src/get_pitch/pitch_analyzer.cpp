@@ -32,6 +32,10 @@ namespace upc {
     switch (win_type) {
     case HAMMING:
       /// \TODO Implement the Hamming window
+      /// \DONE The Hamming Window
+      for(int i=0; i<frameLen; i++){
+        window[i]=0.54 - 0.46*cos((2*M_PI*i)/(frameLen-1));
+      }
       break;
     case RECT:
     default:
@@ -55,7 +59,9 @@ namespace upc {
     /// \TODO Implement a rule to decide whether the sound is voiced or not.
     /// * You can use the standard features (pot, r1norm, rmaxnorm),
     ///   or compute and use other ones.
-    return true;
+    /// \DONE (REVISAR!!!!!)
+    if (r1norm < inter1 || rmaxnorm < inter2) return true;
+    else return false;
   }
 
   float PitchAnalyzer::compute_pitch(vector<float> & x) const {
