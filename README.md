@@ -35,14 +35,14 @@ Ejercicios básicos
 	 NOTA: es más que probable que tenga que usar Python, Octave/MATLAB u otro programa semejante para
 	 hacerlo. Se valorará la utilización de la librería matplotlib de Python.
 
-A continuación la práfica realizada con matplotlib.
+El código requerido para realizar la gráfica se puede encontrar en _src/get_pitch/plotP1.2_. A continuación la gráfica realizada con **Matplotlib**.
 <br><img src="src/get_pitch/plotP1.2/wave_auto.png" width="640" align="center"><br>
 
-El código requerido para realizar la gráfica se puede encontrar en _src/get_pitch/plotP1.2_.
-Donde podemos ver con calidad su periodo de pitch de la Waveform.
-<img src="https://latex.codecogs.com/svg.latex?Periodo\,&space;de&space;\,&space;pitch&space;\approx&space;\frac{2000\,&space;muestras}{14\,&space;periodos}&space;=&space;142,85&space;Hz" title="Periodo\, de \, pitch \approx \frac{2000\, muestras}{14\, periodos} = 142,85 Hz" />
+Donde podemos ver con calidad su periodo de pitch en la Waveform.
 
-Y en la grafica de la autocorrelación también, donde la posición del primer máximo secundario aproximadamente en 155 Hz.
+<<img src="https://latex.codecogs.com/svg.latex?Periodo\,&space;de&space;\,&space;pitch&space;\approx&space;\frac{2000\,&space;muestras}{14\,&space;periodos}&space;=&space;142,85&space;Hz" title="Periodo\, de \, pitch \approx \frac{2000\, muestras}{14\, periodos} = 142,85 Hz" />
+
+Y en la gráfica de la autocorrelación también, donde la posición del primer máximo secundario está aproximadamente en 155 Hz.
 
 
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
