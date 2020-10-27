@@ -15,12 +15,35 @@ Ejercicios básicos
 
    * Complete el cálculo de la autocorrelación e inserte a continuación el código correspondiente.
 
+```cpp
+  void PitchAnalyzer::autocorrelation(const vector<float> &x, vector<float> &r) const {
+    for (unsigned int l = 0; l < r.size(); ++l) {
+      for (unsigned int i = 0; i < (x.size()-l); i++){
+        r[l] = r[l] + x[i]*x[i+r.size()];
+      }
+      r[l] = r[l]/x.size();
+    }
+    if (r[0] == 0.0F) //to avoid log() and divide zero 
+      r[0] = 1e-10; 
+  }
+```
+
    * Inserte una gŕafica donde, en un *subplot*, se vea con claridad la señal temporal de un segmento de
      unos 30 ms de un fonema sonoro y su periodo de pitch; y, en otro *subplot*, se vea con claridad la
 	 autocorrelación de la señal y la posición del primer máximo secundario.
 
 	 NOTA: es más que probable que tenga que usar Python, Octave/MATLAB u otro programa semejante para
 	 hacerlo. Se valorará la utilización de la librería matplotlib de Python.
+
+A continuación la práfica realizada con matplotlib.
+<br><img src="src/get_pitch/plotP1.2/wave_auto.png" width="640" align="center"><br>
+
+El código requerido para realizar la gráfica se puede encontrar en _src/get_pitch/plotP1.2_.
+Donde podemos ver con calidad su periodo de pitch de la Waveform.
+<img src="https://latex.codecogs.com/svg.latex?Periodo\,&space;de&space;\,&space;pitch&space;\approx&space;\frac{2000\,&space;muestras}{14\,&space;periodos}&space;=&space;142,85&space;Hz" title="Periodo\, de \, pitch \approx \frac{2000\, muestras}{14\, periodos} = 142,85 Hz" />
+
+Y en la grafica de la autocorrelación también, donde la posición del primer máximo secundario aproximadamente en 155 Hz.
+
 
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
