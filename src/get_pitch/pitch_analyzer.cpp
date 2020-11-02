@@ -33,8 +33,8 @@ namespace upc {
     case HAMMING:
       /// \TODO Implement the Hamming window
       /// \DONE The Hamming Window
-      for(int i=0; i<frameLen; i++){
-        window[i]=0.54 - 0.46*cos((2*M_PI*i)/(frameLen-1));
+      for(unsigned int i=0; i<frameLen; i++){
+        window[i]=0.54F - 0.46F*cos((2*M_PI*i)/(frameLen-1));
       }
       break;
     case RECT:
