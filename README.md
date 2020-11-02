@@ -61,8 +61,8 @@ void PitchAnalyzer::set_window(Window win_type) {
 
     switch (win_type) {
     case HAMMING:
-      for(int i=0;i<frameLen; i++){
-        window[i]=0.54-0.46*cos((2*M_1_PI*i)/(frameLen-1));
+      for(unsigned int i=0; i<frameLen; i++){
+        window[i]=0.54F - 0.46F*cos((2*M_PI*i)/(frameLen-1));
       }
       break;
     case RECT:
