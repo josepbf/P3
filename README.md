@@ -78,7 +78,10 @@ _Haremos uso del método **`unvoiced`** que nos permite detectar cuando tenemos 
 
 
 ```cpp
-
+  bool PitchAnalyzer::unvoiced(float pot, float r1norm, float rmaxnorm) const {
+    if (r1norm < 0.20F || rmaxnorm < 0.6F) return true;
+    else return false;
+  }
 ```
 
 

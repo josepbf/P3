@@ -60,7 +60,7 @@ namespace upc {
     /// * You can use the standard features (pot, r1norm, rmaxnorm),
     ///   or compute and use other ones.
     /// \DONE (REVISAR!!!!!)
-    if (r1norm < inter1 || rmaxnorm < inter2) return true;
+    if (r1norm < 0.20F || rmaxnorm < 0.6F) return true;
     else return false;
   }
 
@@ -86,6 +86,19 @@ namespace upc {
 	///    - The lag corresponding to the maximum value of the pitch.
     ///	   .
 	/// In either case, the lag should not exceed that of the minimum value of the pitch.
+  
+
+  ///Para encontrar el primer valor negativo, hemos de recorrer la autocorrelación
+  while(*iR>0){
+    ++iR;
+  }
+  while(iR != r.end()){
+    if(*iR > *iRMax){
+      iRMax = iR;//Guardamos la posición donde está el primer máximo
+    }
+    ++iR;
+  }
+  //cout << *iRMax << endl;
 
     unsigned int lag = iRMax - r.begin();
 
