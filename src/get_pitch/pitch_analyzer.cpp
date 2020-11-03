@@ -87,21 +87,17 @@ namespace upc {
     ///	   .
 	/// In either case, the lag should not exceed that of the minimum value of the pitch.
   
-  if(*iR < 0) {
-    cout << "Primer valor negativo de la autocorrelación" << endl;
-  }
-  else {
-    while(*iR>0){
+  
+  while (*iR > 0){
     ++iR;
-    }
-    while(iR != r.end()){
-      if(*iR > *iRMax){
-        iRMax = iR;//Guardamos en iRMax, la posición donde está el máximo
-      }
-      ++iR;
-    }
   }
-
+  while(iR != r.end()){
+    if(*iR > *iRMax){
+          iRMax = iR;//Guardamos en iRMax, la posición donde está el máximo
+    }
+      ++iR;
+  }
+    
 
     unsigned int lag = iRMax - r.begin();
 
