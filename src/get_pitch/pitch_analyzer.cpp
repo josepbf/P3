@@ -60,7 +60,7 @@ namespace upc {
     /// * You can use the standard features (pot, r1norm, rmaxnorm),
     ///   or compute and use other ones.
     /// \DONE (REVISAR!!!!!)
-    if (r1norm < 0.20F || rmaxnorm < 0.6F) return true;
+    if (r1norm < 0.30F && rmaxnorm < 0.6F) return true;
     else return false;
   }
 
