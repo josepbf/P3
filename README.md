@@ -38,7 +38,7 @@ Ejercicios básicos
 _El código requerido para realizar la gráfica se puede encontrar en _src/get_pitch/plotP1.2_. A continuación la gráfica realizada con **Matplotlib**._
 <br><img src="src/get_pitch/plotP1.2/wave_auto.png" width="640" align="center"><br>
 
-_Donde podemos ver con calidad su periodo de pitch en la Waveform._
+_Donde podemos ver con calidad su periodo de pitch en la Waveform_.
 
 <img src="https://latex.codecogs.com/svg.latex?Periodo\,&space;de&space;\,&space;pitch&space;\approx&space;\frac{2000\,&space;muestras}{14\,&space;periodos}&space;=&space;142,85&space;Hz" title="Periodo\, de \, pitch \approx \frac{2000\, muestras}{14\, periodos} = 142,85 Hz" />
 
