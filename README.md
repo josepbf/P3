@@ -35,22 +35,28 @@ Ejercicios básicos
 	 NOTA: es más que probable que tenga que usar Python, Octave/MATLAB u otro programa semejante para
 	 hacerlo. Se valorará la utilización de la librería matplotlib de Python.
 
-El código requerido para realizar la gráfica se puede encontrar en _src/get_pitch/plotP1.2_. A continuación la gráfica realizada con **Matplotlib**.
+_El código requerido para realizar la gráfica se puede encontrar en _src/get_pitch/plotP1.2_. A continuación la gráfica realizada con **Matplotlib**._
 <br><img src="src/get_pitch/plotP1.2/wave_auto.png" width="640" align="center"><br>
 
-Donde podemos ver con calidad su periodo de pitch en la Waveform.
+_Donde podemos ver con calidad su periodo de pitch en la Waveform._
 
 <img src="https://latex.codecogs.com/svg.latex?Periodo\,&space;de&space;\,&space;pitch&space;\approx&space;\frac{2000\,&space;muestras}{14\,&space;periodos}&space;=&space;142,85&space;Hz" title="Periodo\, de \, pitch \approx \frac{2000\, muestras}{14\, periodos} = 142,85 Hz" />
 
-Y en la gráfica de la autocorrelación también, donde la posición del primer máximo secundario está aproximadamente en 155 Hz.
+_Y en la gráfica de la autocorrelación también, donde la posición del primer máximo secundario está aproximadamente en 155 Hz._
 
 
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
 
-_Se analiza un fragmento de la señal para detectar la periodicidad mediante el enventanado, ya que necesitamos como mínimo dos periodos de pitch_.
-    
+_Se analiza un fragmento de la señal para detectar la periodicidad mediante el enventanado, ya que necesitamos como mínimo dos periodos de pitch._
+
+
 _Hemos utilizado la ventana Hamming, que es impletada en el método **`set_window`**_
+
+<br>
+w_h_m(n) =0.54-0.46cos(\frac{2\pi n}{N-1} )
+
+<img src="http://latex.codecogs.com/svg.latex?w_h_m(n)&space;=0.54-0.46cos(\frac{2\pi&space;n}{N-1}&space;)" title="http://latex.codecogs.com/svg.latex?w_h_m(n) =0.54-0.46cos(\frac{2\pi n}{N-1} )" />
 
 ```cpp
 void PitchAnalyzer::set_window(Window win_type) {
@@ -62,7 +68,7 @@ void PitchAnalyzer::set_window(Window win_type) {
     switch (win_type) {
     case HAMMING:
       for(unsigned int i=0; i<frameLen; i++){
-        window[i]=0.54F - 0.46F*cos((2*M_PI*i)/(frameLen-1));
+        window[i]=0.54 - 0.46*cos((2*M_PI*i)/(frameLen-1));
       }
       break;
     case RECT:
@@ -79,7 +85,7 @@ _Haremos uso del método **`unvoiced`** que nos permite detectar cuando tenemos 
 
 ```cpp
   bool PitchAnalyzer::unvoiced(float pot, float r1norm, float rmaxnorm) const {
-    if (r1norm < 0.20F || rmaxnorm < 0.6F) return true;
+    if (r1norm < 0.30F || rmaxnorm < 0.6F) return true;
     else return false;
   }
 ```
@@ -96,11 +102,12 @@ _Haremos uso del método **`unvoiced`** que nos permite detectar cuando tenemos 
 		(r[0]), la autocorrelación normalizada de uno (r1norm = r[1] / r[0]) y el valor de la
 		autocorrelación en su máximo secundario (rmaxnorm = r[lag] / r[0]).
 
+
 		Puede considerar, también, la conveniencia de usar la tasa de cruces por cero.
 
 	    Recuerde configurar los paneles de datos para que el desplazamiento de ventana sea el adecuado, que
-		en esta práctica es de 15 ms.
-
+		en esta práctica es de 15 ms.<br>
+<img src="image/Detección_2.1.PNG" width="640" align="center"><br>
       - Use el detector de pitch implementado en el programa `wavesurfer` en una señal de prueba y compare
 	    su resultado con el obtenido por la mejor versión de su propio sistema.  Inserte una gráfica
 		ilustrativa del resultado de ambos detectores.
