@@ -41,7 +41,7 @@ _El código requerido para realizar la gráfica se puede encontrar en _src/get_p
 Donde podemos ver con calidad su periodo de pitch en la Waveform.
 
 <img src="https://latex.codecogs.com/svg.latex?Periodo\,&space;de&space;\,&space;pitch&space;\approx&space;\frac{2000\,&space;muestras}{14\,&space;periodos}&space;=&space;142,85&space;Hz" title="Periodo\, de \, pitch \approx \frac{2000\, muestras}{14\, periodos} = 142,85 Hz" />
-<br><br>
+
 Y en la gráfica de la autocorrelación también, donde la posición del primer máximo secundario está aproximadamente en 155 Hz.
 
 
