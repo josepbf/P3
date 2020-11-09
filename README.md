@@ -41,7 +41,7 @@ _El código requerido para realizar la gráfica se puede encontrar en _src/get_p
 Donde podemos ver con calidad su periodo de pitch en la Waveform.
 
 <img src="https://latex.codecogs.com/svg.latex?Periodo\,&space;de&space;\,&space;pitch&space;\approx&space;\frac{2000\,&space;muestras}{14\,&space;periodos}&space;=&space;142,85&space;Hz" title="Periodo\, de \, pitch \approx \frac{2000\, muestras}{14\, periodos} = 142,85 Hz" />
-
+<br><br>
 Y en la gráfica de la autocorrelación también, donde la posición del primer máximo secundario está aproximadamente en 155 Hz.
 
 
@@ -53,7 +53,7 @@ _Se analiza un fragmento de la señal para detectar la periodicidad mediante el 
 
 _Hemos utilizado la ventana Hamming, que es impletada en el método **`set_window`**_
 
-
+<img src="http://latex.codecogs.com/svg.latex?w_h_m(n)&space;=0.54-0.46cos(\frac{2\pi&space;n}{N-1}&space;)" title="http://latex.codecogs.com/svg.latex?w_h_m(n) =0.54-0.46cos(\frac{2\pi n}{N-1} )" />
 
 ```cpp
 void PitchAnalyzer::set_window(Window win_type) {
