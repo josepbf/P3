@@ -34,7 +34,7 @@ namespace upc {
       /// \TODO Implement the Hamming window
       /// \DONE The Hamming Window
       for(unsigned int i=0; i<frameLen; i++){
-        window[i]=0.54F - 0.46F*cos((2*M_PI*i)/(frameLen-1));
+        window[i]=0.54 - 0.46*cos((2*M_PI*i)/(frameLen-1));
       }
       break;
     case RECT:
@@ -59,8 +59,8 @@ namespace upc {
     /// \TODO Implement a rule to decide whether the sound is voiced or not.
     /// * You can use the standard features (pot, r1norm, rmaxnorm),
     ///   or compute and use other ones.
-    /// \DONE (REVISAR!!!!!)
-    if (r1norm < 0.30F && rmaxnorm < 0.6F) return true;
+    /// \DONE Whether the sound is voiced or not
+    if (r1norm < 0.3F || rmaxnorm < 0.6F) return true;
     else return false;
   }
 
@@ -77,7 +77,7 @@ namespace upc {
     //Compute correlation
     autocorrelation(x, r);
 
-    vector<float>::const_iterator iR = r.begin(), iRMax = iR;
+    vector<float>::const_iterator iR = r.begin()+npitch_min, iRMax = iR;
 
     /// \TODO 
 	/// Find the lag of the maximum value of the autocorrelation away from the origin.<br>
@@ -91,6 +91,7 @@ namespace upc {
   while (*iR > 0){
     ++iR;
   }
+  iRMax = iR;
   while(iR != r.end()){
     if(*iR > *iRMax){
           iRMax = iR;//Guardamos en iRMax, la posición donde está el máximo
