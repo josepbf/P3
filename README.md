@@ -53,7 +53,7 @@ _Se analiza un fragmento de la señal para detectar la periodicidad mediante el 
 
 _Hemos utilizado la ventana Hamming, que es impletada en el método **`set_window`**_
 
-<img src="http://latex.codecogs.com/svg.latex?w_h_m(n)&space;=0.54-0.46cos(\frac{2\pi&space;n}{N-1}&space;)" title="http://latex.codecogs.com/svg.latex?w_h_m(n) =0.54-0.46cos(\frac{2\pi n}{N-1} )" />
+/*<img src="http://latex.codecogs.com/svg.latex?w_h_m(n)&space;=0.54-0.46cos(\frac{2\pi&space;n}{N-1}&space;)" title="http://latex.codecogs.com/svg.latex?w_h_m(n) =0.54-0.46cos(\frac{2\pi n}{N-1} )" />*/
 
 ```cpp
 void PitchAnalyzer::set_window(Window win_type) {
