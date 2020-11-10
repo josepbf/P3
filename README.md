@@ -50,9 +50,9 @@ _Y en la gráfica de la autocorrelación también, donde la posición del primer
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
 
-_Se analiza un fragmento de la señal para detectar la periodicidad mediante el enventanado, ya que necesitamos como mínimo dos periodos de pitch. la ventana Hamming será la que vamos utilizar, que es implementada en el método **`set_window`**_
+_Se analiza un fragmento de la señal para detectar la periodicidad mediante el enventanado, ya que necesitamos como mínimo dos periodos de pitch.Dicho enventado se realizará mediante la ventana Hamming, que vamos implementarla en el método **`set_window`**_
 
-_Como referéncia para la implemtación usamos la siguiente formúla:_
+_Como referéncia para la implemtación usamos la siguiente definición:_
 
 <img src="http://latex.codecogs.com/svg.latex?w_h_m(n)&space;=0.54-0.46cos(\frac{2\pi&space;n}{N-1}&space;)" title="http://latex.codecogs.com/svg.latex?w_h_m(n) =0.54-0.46cos(\frac{2\pi n}{N-1} )" />
 
