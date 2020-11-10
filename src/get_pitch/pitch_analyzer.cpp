@@ -35,7 +35,7 @@ namespace upc {
       /// \TODO Implement the Hamming window
       /// \DONE The Hamming Window
       for(unsigned int i=0; i<frameLen; i++){
-        window[i]=0.53836F - 0.46164F*cos((2*M_PI*i)/(frameLen-1));
+        window[i]=0.54F - 0.46F*cos((2*M_PI*i)/(frameLen-1));
       }
       break;
     case RECT:
