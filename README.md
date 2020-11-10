@@ -164,9 +164,14 @@ _Después de comprobar el correcto funcionamiento con
 el archivo de audio procedemos a evaluar el
 sistema con la base de datos que nos proporciona._
 
+```
 <img src="image/Evaluación_1.PNG" width="480" align="center">
+
+....
+
 <img src="image/Evaluación_2.PNG" width="480" align="center">
 <img src="image/Evaluación_3.PNG" width="480" align="center">
+```
 
 _Al ejecutar el sistema con la base de datos proporcionada. Observamos el porcentaje de error para cada archivo de audio._
 
