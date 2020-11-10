@@ -189,6 +189,14 @@ Summary                |
   ==> **TOTAL: 90.89%**
   <br>
 
+  modo texto               |modo gráfico           |modo texto                |modo gráfico
+-------------------------| :-------------------: |--------------------------| :--------------------:
+`*cursiva*`              |*cursiva*              |`_cursiva_`               |_cursiva_              
+`**negrita**`            |**negrita**            |`__negrita__`             |__negrita__            
+`***cursiva y negrita***`|***cursiva y negrita***|`___negrita y cursiva___` |___negrita y cursiva___
+`_**negrita y cursiva**_`|__*negrita y cursiva*__|`__*cursiva y negrita*__ `|_**cursiva y negrita**_
+
+
   | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
