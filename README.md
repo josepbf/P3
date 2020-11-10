@@ -166,9 +166,7 @@ sistema con la base de datos que nos proporciona._
 
 
 <img src="image/Evaluación_1.PNG" width="640" align="center">
-
-  **...... ..... ..... ...... ..... ........... ..... .....**
-
+                      ----------
 <img src="image/Evaluación_1.PNG" width="640" align="center">
 
 _Al ejecutar el sistema con la base de datos proporcionada. Observamos el porcentaje de error para cada archivo de audio._
@@ -178,7 +176,7 @@ _Por una parte **unvoiced frames as voiced** nos indica el porcentaje de error d
 _Al final del **summary** obtenemos el porcentaje **TOTAL** del índice de calidad del detector._
 
 ### Summary              |                      | 
-------------------------| :---------------------:
+------------------------| :---------------------:|
 **Num. frames:**                          |11200 = 7045 unvoiced + 4155 voiced                      
 **Unvoiced frames as voiced:**            |409/7045 **(5.81 %)**                    
 **Voiced frames as unvoiced:**            |267/4155 **(6.43 %)**              
