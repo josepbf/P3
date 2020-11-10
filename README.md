@@ -164,16 +164,16 @@ sistema con la base de datos que nos proporciona._
 
 <img src="image/Evaluación_1.PNG" width="640" align="center"><br>
 ***
-  `...... ..... .....` `...... ..... .....` `...... ..... .....`
+  ***...... ..... ..... ...... ..... ........... ..... .....***
 ***
 <img src="image/Evaluación_1.PNG" width="640" align="center"><br>
 
 _Al ejecutar el sistema con la base de datos
-proporcionada. Nos muestra el porcentaje de error para cada archivo de audio.
+proporcionada. Nos muestra el porcentaje de error para cada archivo de audio._
 
-Por una parte `unvoiced frames as voiced` nos indica el porcentaje de error de tramas sordas ha sido detectadas como sonoras y `voiced frames as unvoiced` indicando el porcentaje de error de tramas sonoras ha sido detectadas como sordas.
+_Por una parte **unvoiced frames as voiced** nos indica el porcentaje de error de tramas sordas ha sido detectadas como sonoras y **voiced frames as unvoiced** indicando el porcentaje de error de tramas sonoras ha sido detectadas como sordas._
 
-Al final del `summary` obtenemos el porcentaje `TOTAL` del índice de calidad del detector._
+_Al final del **summary** obtenemos el porcentaje **TOTAL** del índice de calidad del detector._
 
 ### Summary              |                      | 
 ------------------------| :---------------------
@@ -182,10 +182,10 @@ Al final del `summary` obtenemos el porcentaje `TOTAL` del índice de calidad de
 **Voiced frames as unvoiced:**            |267/4155 **(6.43 %)**              
 **Gross voiced errors (+20.00 %):**       |84/3888  **(2.16 %)**
 **MSE of fine errors:**  |**2.43 %**      
-  |==> **`TOTAL: 90.89%`**
+  |==> **TOTAL: 90.89%**
   <br>
  
-_Respecto a los resultados obtenidos son bastante positivos obteniendo un índice de calidad de detector del **`90.89%`**, dado que los porcentajes de error durante la evaluación podríamos considerar que son razonablemente bajos._
+_Respecto a los resultados obtenidos son bastante positivos obteniendo un índice de calidad de detector del **90.89%**, dado que los porcentajes de error durante la evaluación podríamos considerar que son razonablemente bajos._
 
    * Inserte una gráfica en la que se vea con claridad el resultado de su detector de pitch junto al del
      detector de Wavesurfer. Aunque puede usarse Wavesurfer para obtener la representación, se valorará
