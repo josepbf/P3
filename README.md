@@ -170,6 +170,7 @@ sistema con la base de datos que nos proporciona._
 .... .... .... ..... ..... ..... ...... ..... .... .... 
 
 > <img src="image/Evaluación_2N.PNG" width="480" align="center">
+
 > <img src="image/Evaluación_3N.PNG" width="480" align="center">
 
 
