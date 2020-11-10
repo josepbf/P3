@@ -165,12 +165,12 @@ el archivo de audio procedemos a evaluar el
 sistema con la base de datos que nos proporciona._
 
 
-<img src="image/Evaluación_1.PNG" width="480" align="center">
+<img src="image/Evaluación_1N.PNG" width="480" align="center">
 
-....
+.... .... .... ..... ..... ..... ...... ..... .... .... 
 
-<img src="image/Evaluación_2.PNG" width="480" align="center">
-<img src="image/Evaluación_3.PNG" width="480" align="center">
+<img src="image/Evaluación_2N.PNG" width="480" align="center">
+<img src="image/Evaluación_3N.PNG" width="480" align="center">
 
 
 _Al ejecutar el sistema con la base de datos proporcionada. Observamos el porcentaje de error para cada archivo de audio._
@@ -180,13 +180,13 @@ _Por una parte **unvoiced frames as voiced** nos indica el porcentaje de error d
 _Al final del **summary** obtenemos el porcentaje **TOTAL** del índice de calidad del detector._
 
 Summary                |                                             
-------------------------| :---------------------:
+------------------------| :---------------------:|
 **Num. frames:**                          | 11200 = 7045 unvoiced + 4155 voiced                    
 **Unvoiced frames as voiced:**            | 409/7045 **(5.81 %)** 
 **Voiced frames as unvoiced:**            | 267/4155 **(6.43 %)**           
 **Gross voiced errors (+20.00 %):**       | 84/3888  **(2.16 %)**
 **MSE of fine errors:**  |**2.43 %**      
-  ==> **TOTAL: 90.89%**|
+  ==> **TOTAL: 90.89%**
   <br>
 
   | Tables        | Are           | Cool  |
