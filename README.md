@@ -17,11 +17,13 @@ Ejercicios básicos
 
 ```cpp
   void PitchAnalyzer::autocorrelation(const vector<float> &x, vector<float> &r) const {
+
     for (unsigned int l = 0; l < r.size(); ++l) {
-      for (unsigned int i = 0; i < (x.size()-l); i++){
-        r[l] = r[l] + x[i]*x[i+r.size()];
+      float sum = 0;
+      for (unsigned int i = 0; i < (frameLen-l); i++){
+        sum += x[i]*x[i+l];
       }
-      r[l] = r[l]/x.size();
+      r[l] = sum/frameLen;
     }
     if (r[0] == 0.0F) //to avoid log() and divide zero 
       r[0] = 1e-10; 
@@ -35,14 +37,14 @@ Ejercicios básicos
 	 NOTA: es más que probable que tenga que usar Python, Octave/MATLAB u otro programa semejante para
 	 hacerlo. Se valorará la utilización de la librería matplotlib de Python.
 
-_El código requerido para realizar la gráfica se puede encontrar en _src/get_pitch/plotP1.2_. A continuación la gráfica realizada con **Matplotlib**._
-<br><img src="src/get_pitch/plotP1.2/wave_auto.png" width="640" align="center"><br>
+<br>_El código requerido para realizar la gráfica se puede encontrar en _src/get_pitch/plotP1.2_. A continuación la gráfica realizada con **Matplotlib**._
+<br><br><img src="src/get_pitch/plotP1.2/wave_auto.png" width="640" align="center"><br>
 
-Donde podemos ver con calidad su periodo de pitch en la Waveform.
+_Donde podemos ver con calidad su periodo de pitch en la Waveform._
 
 <img src="https://latex.codecogs.com/svg.latex?Periodo\,&space;de&space;\,&space;pitch&space;\approx&space;\frac{2000\,&space;muestras}{14\,&space;periodos}&space;=&space;142,85&space;Hz" title="Periodo\, de \, pitch \approx \frac{2000\, muestras}{14\, periodos} = 142,85 Hz" />
 
-Y en la gráfica de la autocorrelación también, donde la posición del primer máximo secundario está aproximadamente en 155 Hz.
+_Y en la gráfica de la autocorrelación también, donde la posición del primer máximo secundario está aproximadamente en 155 Hz._
 
 
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
@@ -65,7 +67,7 @@ void PitchAnalyzer::set_window(Window win_type) {
     switch (win_type) {
     case HAMMING:
       for(unsigned int i=0; i<frameLen; i++){
-        window[i]=0.54 - 0.46*cos((2*M_PI*i)/(frameLen-1));
+        window[i]=0.53836F - 0.46164F*cos((2*M_PI*i)/(frameLen-1));
       }
       break;
     case RECT:
@@ -75,15 +77,35 @@ void PitchAnalyzer::set_window(Window win_type) {
   }
  ```
 
+ ```cpp
+ vector<float>::const_iterator iR = r.begin()+npitch_min, iRMax = iR;
+
+  while(*iR>0) iR++;
+
+  iRMax=iR;
+
+  while(iR != r.end()){
+
+      if(*iR >= *iRMax) iRMax = iR;//Guardamos en iRMax, la posición donde está el máximo
+      iR++;
+
+  }
+    unsigned int lag = iRMax - r.begin();
+
+    float pot = 10 * log10(r[0]);
+ ´´´
+
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
 
-_Haremos uso del método **`unvoiced`** que nos permite detectar cuando tenemos voz y cuando es silencio_.
+_Haremos uso del método **`unvoiced`** que nos permite ...
 
 
 ```cpp
   bool PitchAnalyzer::unvoiced(float pot, float r1norm, float rmaxnorm) const {
-    if (r1norm < 0.30F || rmaxnorm < 0.6F) return true;
-    else return false;
+
+    if (pot > -48.9F && (r1norm > 0.93F || rmaxnorm > 0.45F)) return false;
+    else return true;
+
   }
 ```
 
@@ -104,7 +126,9 @@ _Haremos uso del método **`unvoiced`** que nos permite detectar cuando tenemos 
 
 	    Recuerde configurar los paneles de datos para que el desplazamiento de ventana sea el adecuado, que
 		en esta práctica es de 15 ms.<br>
+
 <img src="image/Detección_2.1.PNG" width="640" align="center"><br>
+
       - Use el detector de pitch implementado en el programa `wavesurfer` en una señal de prueba y compare
 	    su resultado con el obtenido por la mejor versión de su propio sistema.  Inserte una gráfica
 		ilustrativa del resultado de ambos detectores.
