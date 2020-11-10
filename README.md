@@ -54,7 +54,7 @@ _Se analiza un fragmento de la señal para detectar la periodicidad mediante el 
 
 _Como referéncia para la implemtación usamos la siguiente definición:_
 
-<img src="http://latex.codecogs.com/svg.latex?Ventana&space;Hammingw_h_m(n)&space;=0.54-0.46cos(\frac{2\pi&space;n}{N-1}&space;)" title="http://latex.codecogs.com/svg.latex?Ventana Hammingw_h_m(n) =0.54-0.46cos(\frac{2\pi n}{N-1} )" />
+<img src="http://latex.codecogs.com/svg.latex?\underline{Ventana&space;Hamming}\\w_h_m(n)&space;=0.54-0.46cos(\frac{2\pi&space;n}{N-1}&space;)" title="http://latex.codecogs.com/svg.latex?\underline{Ventana Hamming}\\w_h_m(n) =0.54-0.46cos(\frac{2\pi n}{N-1} )" />
 
 _Que se encuentra en el siguiente link:_ [Procesamiento digital de la señal, Pág:11](http://ccc.inaoep.mx/~pgomez/cursos/pds/slides/S10-WavP1.pdf)
 
