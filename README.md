@@ -188,9 +188,10 @@ _Al final del **summary** obtenemos el porcentaje **TOTAL** del índice de calid
 |**Gross voiced errors (+20.00 %):**       | 84/3888  **(2.16 %)**               |
 |**MSE of fine errors:**                   | **2.43 %**                          |
 |                                          | ==> **TOTAL: 90.89%**               |
-<br>
+
 _Respecto a los resultados obtenidos son bastante positivos obteniendo un índice de calidad de detector del **90.89%**,
 dado que los porcentajes de error durante la evaluación podríamos considerar que son razonablemente bajos._
+<br>
 
    * Inserte una gráfica en la que se vea con claridad el resultado de su detector de pitch junto al del
      detector de Wavesurfer. Aunque puede usarse Wavesurfer para obtener la representación, se valorará
