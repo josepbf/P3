@@ -56,8 +56,6 @@ _Hemos utilizado la ventana Hamming, que se implementa en el método **`set_wind
 
 _Para la implemtación partimos de la formúla:_
 
- w_h_m(n)=0.54-0.46cos(\frac{2\pi n}{N-1} )
-
 <img src="http://latex.codecogs.com/svg.latex?w_h_m(n)&space;=0.54-0.46cos(\frac{2\pi&space;n}{N-1}&space;)" title="http://latex.codecogs.com/svg.latex?w_h_m(n) =0.54-0.46cos(\frac{2\pi n}{N-1} )" />
 
 _Que se encuentra en el siguiente link:_ [Procesamiento digital de la señal, Pág:11](http://ccc.inaoep.mx/~pgomez/cursos/pds/slides/S10-WavP1.pdf)
@@ -141,7 +139,7 @@ el valor de la autocorrelació en su máximo secundario._
 	    Recuerde configurar los paneles de datos para que el desplazamiento de ventana sea el adecuado, que
 		en esta práctica es de 15 ms.
 
-
+      **FALTA GRÁFICA**
 
 
 
@@ -152,7 +150,7 @@ el valor de la autocorrelació en su máximo secundario._
 	    su resultado con el obtenido por la mejor versión de su propio sistema.  Inserte una gráfica
 		ilustrativa del resultado de ambos detectores.
   
-
+       **FALTA GRÁFICA**
 
 
 
@@ -199,7 +197,7 @@ dado que los porcentajes de error durante la evaluación podríamos considerar q
 	 el uso de alternativas de mayor calidad (particularmente Python).
    
 
-
+**FALTA GRÁFICA**
 
 
 
