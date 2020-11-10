@@ -60,7 +60,7 @@ _Para la implemtación partimos de la formúla:_
 
 <img src="http://latex.codecogs.com/svg.latex?w_h_m(n)&space;=0.54-0.46cos(\frac{2\pi&space;n}{N-1}&space;)" title="http://latex.codecogs.com/svg.latex?w_h_m(n) =0.54-0.46cos(\frac{2\pi n}{N-1} )" />
 
-_Que la encuentramos en el siguiente link:_ [Procesamiento digital de la señal, Pág:11](http://ccc.inaoep.mx/~pgomez/cursos/pds/slides/S10-WavP1.pdf)
+_Que se encuentra en el siguiente link:_ [Procesamiento digital de la señal, Pág:11](http://ccc.inaoep.mx/~pgomez/cursos/pds/slides/S10-WavP1.pdf)
 
 ```cpp
 void PitchAnalyzer::set_window(Window win_type) {
@@ -108,9 +108,12 @@ _A continuación realiza una comparación dando el valor máximo del pitch._
 
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
 
-_Con el objetivo de detectar si un fragmento de voz es sordo o sonoro, usaremos el criterio de la potencia media, es decir, si la potencia supera el umbral, se trata de un fragmento de voz sonoro, y sino decidimos que el fragmento de voz sordo._
+_Con el objetivo de detectar si un fragmento de voz es sordo o sonoro, usaremos el criterio de la potencia media, 
+es decir, si la potencia supera el umbral, se trata de un fragmento de voz sonoro, 
+y sino decidimos que el fragmento de voz sordo._
 
-_Por otra parte miramos la relación entre el valor de la autocorrelación en distintas muestras y el valor de la autocorrelació en su máximo secundario._ 
+_Por otra parte miramos la relación entre el valor de la autocorrelación en distintas muestras y 
+el valor de la autocorrelació en su máximo secundario._ 
 
 ```cpp
   bool PitchAnalyzer::unvoiced(float pot, float r1norm, float rmaxnorm) const {
@@ -162,19 +165,20 @@ el archivo de audio procedemos a evaluar el
 sistema con la base de datos que nos proporciona._
 
 
-<img src="image/Evaluación_1.PNG" width="640" align="center"><br>
-  ***...... ..... ..... ...... ..... ........... ..... .....***
-<img src="image/Evaluación_1.PNG" width="640" align="center"><br>
+<img src="image/Evaluación_1.PNG" width="640" align="center">
 
-_Al ejecutar el sistema con la base de datos
-proporcionada. Nos muestra el porcentaje de error para cada archivo de audio._
+  **...... ..... ..... ...... ..... ........... ..... .....**
+
+<img src="image/Evaluación_1.PNG" width="640" align="center">
+
+_Al ejecutar el sistema con la base de datos proporcionada. Observamos el porcentaje de error para cada archivo de audio._
 
 _Por una parte **unvoiced frames as voiced** nos indica el porcentaje de error de tramas sordas ha sido detectadas como sonoras y **voiced frames as unvoiced** indicando el porcentaje de error de tramas sonoras ha sido detectadas como sordas._
 
 _Al final del **summary** obtenemos el porcentaje **TOTAL** del índice de calidad del detector._
 
 ### Summary              |                      | 
-------------------------| :---------------------
+------------------------| :---------------------:
 **Num. frames:**                          |11200 = 7045 unvoiced + 4155 voiced                      
 **Unvoiced frames as voiced:**            |409/7045 **(5.81 %)**                    
 **Voiced frames as unvoiced:**            |267/4155 **(6.43 %)**              
@@ -183,7 +187,8 @@ _Al final del **summary** obtenemos el porcentaje **TOTAL** del índice de calid
   |==> **TOTAL: 90.89%**
   <br>
  
-_Respecto a los resultados obtenidos son bastante positivos obteniendo un índice de calidad de detector del **90.89%**, dado que los porcentajes de error durante la evaluación podríamos considerar que son razonablemente bajos._
+_Respecto a los resultados obtenidos son bastante positivos obteniendo un índice de calidad de detector del **90.89%**,
+dado que los porcentajes de error durante la evaluación podríamos considerar que son razonablemente bajos._
 
    * Inserte una gráfica en la que se vea con claridad el resultado de su detector de pitch junto al del
      detector de Wavesurfer. Aunque puede usarse Wavesurfer para obtener la representación, se valorará
