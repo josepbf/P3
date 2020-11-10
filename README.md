@@ -163,9 +163,7 @@ sistema con la base de datos que nos proporciona._
 
 
 <img src="image/Evaluación_1.PNG" width="640" align="center"><br>
-***
   ***...... ..... ..... ...... ..... ........... ..... .....***
-***
 <img src="image/Evaluación_1.PNG" width="640" align="center"><br>
 
 _Al ejecutar el sistema con la base de datos
