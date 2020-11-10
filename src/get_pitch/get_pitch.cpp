@@ -59,7 +59,7 @@ int main(int argc, const char *argv[]) {
   int n_shift = rate * FRAME_SHIFT;
 
   // Define analyzer
-  PitchAnalyzer analyzer(n_len, rate, PitchAnalyzer::RECT, 50, 500); //RECT HAMMING¿?¿?
+  PitchAnalyzer analyzer(n_len, rate, PitchAnalyzer::HAMMING, 50, 500); //RECT HAMMING¿?¿?
 
   /// \TODO
   /// Preprocess the input signal in order to ease pitch estimation. For instance,
