@@ -19,12 +19,15 @@ Ejercicios básicos
   void PitchAnalyzer::autocorrelation(const vector<float> &x, vector<float> &r) const {
 
     for (unsigned int l = 0; l < r.size(); ++l) {
+  		/// \TODO Compute the autocorrelation r[l]
+      /// \DONE Autocorrelation done
       float sum = 0;
       for (unsigned int i = 0; i < (frameLen-l); i++){
         sum += x[i]*x[i+l];
       }
       r[l] = sum/frameLen;
     }
+    
     if (r[0] == 0.0F) //to avoid log() and divide zero 
       r[0] = 1e-10; 
   }
@@ -37,15 +40,12 @@ Ejercicios básicos
 	 NOTA: es más que probable que tenga que usar Python, Octave/MATLAB u otro programa semejante para
 	 hacerlo. Se valorará la utilización de la librería matplotlib de Python.
 
-<br>_El código requerido para realizar la gráfica se puede encontrar en _src/get_pitch/plotP1.2_. A continuación la gráfica realizada con **Matplotlib**._
-<br><br><img src="src/get_pitch/plotP1.2/wave_auto.png" width="640" align="center"><br>
+<br>_La señal .wav y el código requerido para realizar la gráfica se puede encontrar en _src/get_pitch/plotP1.2/plotpitch.py_. A continuación la gráfica realizada con **Matplotlib**._
+<br><br><img src="image/Figure_1.png" width="640" align="center"><br>
 
-_Donde podemos ver con calidad su periodo de pitch en la Waveform._
+_Donde podemos ver con calidad su periodo de pitch en la Waveform y la función de autcorrrelación. Con el siguiente cálculo podemos calcular el pitch._
 
-<img src="https://latex.codecogs.com/svg.latex?Periodo\,&space;de&space;\,&space;pitch&space;\approx&space;\frac{2000\,&space;muestras}{14\,&space;periodos}&space;=&space;142,85&space;Hz" title="Periodo\, de \, pitch \approx \frac{2000\, muestras}{14\, periodos} = 142,85 Hz" />
-
-_Y en la gráfica de la autocorrelación también, donde la posición del primer máximo secundario está aproximadamente en 155 Hz._
-
+<img src="https://latex.codecogs.com/gif.latex?Pitch&space;=&space;\frac{2000muestras}{14&space;picos}&space;=&space;142,85&space;Hz" title="Pitch = \frac{2000muestras}{14 picos} = 142,85 Hz" />
 
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
@@ -177,12 +177,12 @@ _Por una parte **unvoiced frames as voiced** nos indica el porcentaje de error d
 _Al final del **summary** obtenemos el porcentaje **TOTAL** del índice de calidad del detector._
 
 
-|**###Summary**                            |                                     |           
+|**Summary**                               |                                     |           
 |:-----------------------------------------|-------------------------------------|
 |**Num. frames:**                          | 11200 = 7045 unvoiced + 4155 voiced |                   
-|**Unvoiced frames as voiced:**            | 409/7045 **(5.81 %)**               |
+|**Unvoiced frames as voiced:**            | 410/7045 **(5.82 %)**               |
 |**Voiced frames as unvoiced:**            | 267/4155 **(6.43 %)**               |         
-|**Gross voiced errors (+20.00 %):**       | 84/3888  **(2.16 %)**               |
+|**Gross voiced errors (+20.00 %):**       | 84/3888  **(2.11 %)**               |
 |**MSE of fine errors:**                   | **2.43 %**                          |
 |                                          | ==> **TOTAL: 90.89%**               |
 
