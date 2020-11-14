@@ -136,8 +136,10 @@ el valor de la autocorrelació en su máximo secundario._
 
 	    Recuerde configurar los paneles de datos para que el desplazamiento de ventana sea el adecuado, que
 		en esta práctica es de 15 ms.
-
+      
+      _De arriba a abajo, pitch, r[0], r1norm y rmaxnorm._
       <img src="image/multiplePlots.png" width="640" align="center">
+
 
 
 
@@ -148,6 +150,7 @@ el valor de la autocorrelació en su máximo secundario._
 	    su resultado con el obtenido por la mejor versión de su propio sistema.  Inserte una gráfica
 		ilustrativa del resultado de ambos detectores.
   
+  	_De arriba a abajo, detector de pitch de `wavesurfer`, nuestra versión y la señal._
        <img src="image/captureWavesurfer.png" width="640" align="center">
 
 
