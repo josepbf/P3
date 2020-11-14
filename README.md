@@ -137,7 +137,7 @@ el valor de la autocorrelació en su máximo secundario._
 	    Recuerde configurar los paneles de datos para que el desplazamiento de ventana sea el adecuado, que
 		en esta práctica es de 15 ms.
 
-      **FALTA GRÁFICA**
+      <img src="image/multiplePlots.png" width="640" align="center">
 
 
 
@@ -148,7 +148,7 @@ el valor de la autocorrelació en su máximo secundario._
 	    su resultado con el obtenido por la mejor versión de su propio sistema.  Inserte una gráfica
 		ilustrativa del resultado de ambos detectores.
   
-       **FALTA GRÁFICA**
+       <img src="image/captureWavesurfer.png" width="640" align="center">
 
 
 
@@ -194,10 +194,9 @@ dado que los porcentajes de error durante la evaluación podríamos considerar q
      detector de Wavesurfer. Aunque puede usarse Wavesurfer para obtener la representación, se valorará
 	 el uso de alternativas de mayor calidad (particularmente Python).
    
+<img src="image/finalplot.png" width="640" align="center">
 
-**FALTA GRÁFICA**
-
-
+_Script disponible en src/get_pitch/plotParametros/plotPitch.py_
 
 
 
